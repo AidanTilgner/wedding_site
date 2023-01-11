@@ -1,5 +1,5 @@
 <script lang="ts">
-    let open = false;
+  let open = false;
 </script>
 
 {#if !open}
@@ -7,13 +7,13 @@
     <h3 class="title">Laney & Aidan</h3>
     <i
       class="burger ph-list"
-      on:click={() => open = !open}
-      on:keydown={e => {
-        if (e.key === 'Enter') {
+      on:click={() => (open = !open)}
+      on:keydown={(e) => {
+        if (e.key === "Enter") {
           open = !open;
         }
       }}
-    ></i>
+    />
   </div>
 {:else}
   <div class="nav-open">
@@ -21,37 +21,31 @@
       <h3 class="title">Laney & Aidan</h3>
       <i
         class="burger ph-x"
-        on:click={() => open = !open}
-        on:keydown={e => {
-          if (e.key === 'Enter') {
+        on:click={() => (open = !open)}
+        on:keydown={(e) => {
+          if (e.key === "Enter") {
             open = !open;
           }
         }}
-      ></i>
+      />
     </div>
     <div class="menu">
       <ul class="menu__list">
         <li>
-          <a 
-            href="/"
-          >Home</a>
+          <a href="/">Home</a>
         </li>
         <li>
-          <a 
-            href="/gifts"
-          >Gifts</a>
+          <a href="/gifts">Gifts</a>
         </li>
         <li>
-          <a 
-            href="/gallery"
-          >Gallery</a>
+          <a href="/gallery">Gallery</a>
         </li>
       </ul>
     </div>
   </div>
 {/if}
 
-<style>
+<style lang="scss">
   .navbar {
     overflow: hidden;
     position: fixed;
@@ -65,6 +59,14 @@
     justify-content: center;
   }
 
+  @keyframes open-nav {
+    0% {
+      backdrop-filter: blur(0px);
+    }
+    100% {
+      backdrop-filter: blur(3px);
+    }
+  }
   .nav-open {
     overflow: hidden;
     position: fixed;
@@ -77,6 +79,7 @@
     align-items: center;
     justify-content: center;
     backdrop-filter: blur(3px);
+    animation: open-nav 0.3s ease-in-out;
   }
 
   .menu {
@@ -96,8 +99,23 @@
     margin: 0;
   }
 
+  @keyframes text-in {
+    0% {
+      transform: translateY(100%);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+
   .menu__list li {
     margin: 0 0 16px;
+    animation: text-in 0.3s ease-out;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      margin: 24px 0;
+    }
   }
 
   .menu__list li a {
