@@ -101,7 +101,7 @@
 
   @keyframes text-in {
     0% {
-      transform: translateY(100%);
+      transform: translateY(50vh);
     }
     100% {
       transform: translateY(0);
