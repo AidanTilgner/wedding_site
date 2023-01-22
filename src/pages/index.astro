@@ -1,33 +1,8 @@
 ---
-import FAQs from "../components/FAQs/FAQs.svelte";
 import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout title="Our Wedding | Home">
-  <section class="hero">
-    <img class="hero__image" src="/assets/images/hero.png" />
-    <p class="hero__text">The Wedding of Laney & Aidan</p>
-    <div class="hero__buttons">
-      <button class="hero__button btn btn-primary">Gifts</button>
-    </div>
-  </section>
-  <section class="faqs">
-    <FAQs
-      questions={[
-        {
-          question: "Where is the wedding?",
-          answer:
-            "The wedding will be held at the beautiful Green Villa wedding barn in Independence.",
-        },
-        {
-          question: "When is the wedding?",
-          answer: "The wedding will be August 28th, 2023",
-        },
-      ]}
-      client:load
-    />
-  </section>
-</Layout>
+<Layout title="Home">home</Layout>
 
 <style lang="scss">
   .hero {

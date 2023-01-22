@@ -2,9 +2,9 @@
 export interface Props {
   title: string;
 }
-import Navbar from "../components/Navbar.svelte";
 
 const { title } = Astro.props;
+import Navbar from "../components/Navigation/Navbar";
 ---
 
 <!DOCTYPE html>
@@ -17,22 +17,22 @@ const { title } = Astro.props;
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Dancing+Script:wght@400;500;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;1,100;1,300;1,400;1,700&display=swap"
       rel="stylesheet"
     />
     <script src="https://unpkg.com/phosphor-icons"></script>
-    <title>{title}</title>
+    <title>Our Wedding | {title}</title>
   </head>
   <body>
     <Navbar client:load />
     <slot />
     <style is:global>
       :root {
-        --sand: #d9bca3;
+        --sand: #ffbe9b;
+        --sage-green: #aabfb3;
       }
       html {
         font-family: system-ui, sans-serif;
-        background-color: #f6f6f6;
       }
       body {
         margin: 0;
