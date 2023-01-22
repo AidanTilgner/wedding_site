@@ -1,45 +1,113 @@
 ---
+import Button from "../components/Buttons/Button";
+import Countdown from "../components/Countdown/Countdown";
 import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout title="Home">home</Layout>
+<Layout title="Home">
+  <section class="countdown">
+    <h1 class="title">Countdown</h1>
+    <p class="caption">
+      The Wedding will be held at 4pm on Monday, August 28th
+    </p>
+    <div class="countdown-container">
+      <Countdown client:load date={new Date("2023-08-28T16:00:00.000Z")} />
+    </div>
+    <div class="buttons">
+      <div class="cta">
+        <p>Have an Invite?</p>
+        <Button link="/rsvp" type="primary" client:load>RSVP Now</Button>
+      </div>
+      <div class="cta">
+        <p>Got a Question?</p>
+        <Button link="/faqs" type="secondary" client:load>See FAQ's</Button>
+      </div>
+    </div>
+  </section>
+</Layout>
 
 <style lang="scss">
-  .hero {
+  section {
+    padding-inline: 36px;
+  }
+
+  .title {
+    font-size: 48px;
+    font-family: "Lato", sans-serif;
+    font-weight: 300;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 24px;
+    text-align: center;
+  }
+
+  .caption {
+    font-size: 18px;
+    font-weight: 400;
+    font-family: "Dancing Script", cursive;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 36px;
+    text-align: center;
+  }
+
+  .countdown {
     height: 100vh;
-    position: relative;
+    padding-block: 36px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
 
-    &__image {
-      height: 100%;
-      width: 100%;
-      object-fit: cover;
-      filter: brightness(0.6);
-      // the image should always show the top of the image
-      object-position: top;
+    @media (min-width: 768px) {
+      padding-block: 82px;
     }
 
-    &__text {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -75%);
-      color: white;
-      font-size: 48px;
-      font-weight: 400;
-      font-family: "Dancing Script", cursive;
-      text-align: center;
-      width: 80%;
-    }
-
-    &__buttons {
-      position: absolute;
-      bottom: 20%;
-      left: 50%;
-      transform: translateX(-50%);
+    .buttons {
+      margin-top: 82px;
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 16px;
+      justify-content: space-between;
+      width: 100%;
+
+      @media (min-width: 768px) {
+        flex-direction: row;
+      }
+
+      @media (min-width: 768px) {
+        width: 50%;
+      }
+
+      .cta {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        &:nth-child(1) {
+          margin-bottom: 36px;
+
+          @media (min-width: 768px) {
+            margin-bottom: 0;
+          }
+        }
+
+        p {
+          font-family: "Dancing Script", cursive;
+          font-size: 18px;
+          font-weight: 500;
+          color: rgba($color: #242424, $alpha: 0.65);
+        }
+      }
+    }
+  }
+
+  .countdown-container {
+    width: 75%;
+
+    @media (min-width: 768px) {
+      width: 35%;
     }
   }
 </style>

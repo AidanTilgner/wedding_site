@@ -1,6 +1,6 @@
 .button {
-  height: 40px;
-  width: 135px;
+  height: 36px;
+  width: 120px;
   font-family: "Lato", sans-serif;
   font-size: 14px;
   font-weight: 400;
@@ -12,6 +12,12 @@
   cursor: pointer;
   transition: all 0.3s ease-in-out;
   border-radius: 5px;
+
+  @media (min-width: 768px) {
+    height: 48px;
+    width: 135px;
+    font-size: 16px;
+  }
 
   &:hover {
     transform: scale(1.05);
