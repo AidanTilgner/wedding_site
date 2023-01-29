@@ -5,6 +5,7 @@ export interface Props {
 
 const { title } = Astro.props;
 import Navbar from "../components/Navigation/Navbar";
+import Footer from "../components/Layout/Footer.astro";
 ---
 
 <!DOCTYPE html>
@@ -26,6 +27,7 @@ import Navbar from "../components/Navigation/Navbar";
   <body>
     <Navbar client:load />
     <slot />
+    <Footer />
     <style is:global>
       :root {
         --sand: #ffbe9b;

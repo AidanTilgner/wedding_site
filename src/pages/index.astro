@@ -5,30 +5,71 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Home">
-  <section class="countdown">
-    <h1 class="title">Countdown</h1>
-    <p class="caption">
-      The Wedding will be held at 4pm on Monday, August 28th
-    </p>
-    <div class="countdown-container">
-      <Countdown client:load date={new Date("2023-08-28T16:00:00.000Z")} />
-    </div>
-    <div class="buttons">
-      <div class="cta">
-        <p>Have an Invite?</p>
-        <Button link="/rsvp" type="primary" client:load>RSVP Now</Button>
+  <main>
+    <section class="countdown">
+      <h1 class="title">Countdown</h1>
+      <p class="caption">
+        The Wedding will be held at 4pm on Monday, August 28th
+      </p>
+      <div class="countdown-container">
+        <Countdown client:load date={new Date("2023-08-28T16:00:00.000Z")} />
       </div>
-      <div class="cta">
-        <p>Got a Question?</p>
-        <Button link="/faqs" type="secondary" client:load>See FAQ's</Button>
+      <div class="buttons">
+        <div class="cta">
+          <p>Have an Invite?</p>
+          <Button link="/rsvp" type="primary" client:load>RSVP Now</Button>
+        </div>
+        <div class="cta">
+          <p>Got a Question?</p>
+          <Button link="/faqs" type="secondary" client:load>See FAQ's</Button>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
+    <section class="story">
+      <h1 class="title">Our Story</h1>
+      <p class="caption">
+        The story of how we fell in love, and why we're getting married
+      </p>
+      <div class="paragraphs">
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem ducimus
+          et corporis sed? Laborum repellat, aspernatur adipisci molestiae
+          labore accusamus repellendus quae, nam doloremque, beatae vitae.
+          Blanditiis quidem minima, debitis eveniet odio cumque quo a beatae
+          labore assumenda commodi neque similique aliquid aspernatur, amet fuga
+          tenetur saepe ut architecto nemo quasi esse necessitatibus? Maiores
+          minima sed laboriosam. Reiciendis et iste quis quam quia, unde atque
+          ipsam totam hic, similique cum facere eligendi, maiores quae expedita?
+          Culpa debitis modi temporibus iste eius, cum quisquam facere natus
+          magni, dolorem in.
+        </p>
+        <p>
+          Neque praesentium tempora corporis qui facere sed perferendis
+          doloremque. Impedit, tempore. A repudiandae quis nobis perspiciatis
+          soluta nesciunt error temporibus harum laboriosam animi distinctio
+          ducimus aperiam, ex asperiores, id eaque earum mollitia esse odio nam
+          tenetur atque eligendi quam? Odio, pariatur corrupti! Aut, facilis
+          accusantium distinctio tempora molestiae dolorum ut placeat maxime
+          saepe earum ea soluta debitis ratione delectus expedita velit
+          exercitationem at blanditiis, eius, quaerat rerum? Mollitia doloremque
+          a tenetur soluta velit quod molestiae. Praesentium culpa tempore eius
+          quae provident et, similique temporibus facilis harum omnis ratione
+          doloribus iusto ex odit!
+        </p>
+      </div>
+    </section>
+  </main>
 </Layout>
 
 <style lang="scss">
+  main {
+    padding-block: 82px;
+  }
+
   section {
     padding-inline: 36px;
+    padding-block: 36px;
+    border-bottom: 1px solid #eaeaea;
   }
 
   .title {
@@ -52,16 +93,11 @@ import Layout from "../layouts/Layout.astro";
   }
 
   .countdown {
-    height: 100vh;
-    padding-block: 36px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-
-    @media (min-width: 768px) {
-      padding-block: 82px;
-    }
+    box-sizing: border-box;
 
     .buttons {
       margin-top: 82px;
@@ -108,6 +144,19 @@ import Layout from "../layouts/Layout.astro";
 
     @media (min-width: 768px) {
       width: 35%;
+    }
+  }
+
+  .story {
+    .paragraphs {
+      // grid, 2 columns
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-gap: 36px;
+
+      @media (min-width: 768px) {
+        grid-template-columns: 1fr 1fr;
+      }
     }
   }
 </style>
