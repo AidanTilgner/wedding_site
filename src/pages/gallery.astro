@@ -1,5 +1,99 @@
 ---
 import Layout from "../layouts/Layout.astro";
+
+const photos = [
+  {
+    link: "/assets/gallery/gallery-1.jpg",
+  },
+  {
+    link: "/assets/gallery/gallery-2.jpg",
+  },
+  {
+    link: "/assets/gallery/gallery-3.jpg",
+  },
+  {
+    link: "/assets/gallery/gallery-4.jpg",
+  },
+  {
+    link: "/assets/gallery/gallery-5.jpg",
+  },
+  {
+    link: "/assets/gallery/gallery-6.jpg",
+  },
+  {
+    link: "/assets/gallery/gallery-7.jpg",
+  },
+];
 ---
 
-<Layout title="Gallery">Gallery</Layout>
+<Layout title="Gallery"
+  ><main>
+    <h2>Gallery</h2>
+    <div class="columns">
+      <div class="column">
+        <div class="column__item">
+          <img src={photos[0].link} alt="" />
+        </div>
+        <div class="column__item">
+          <img src={photos[1].link} alt="" />
+        </div>
+      </div>
+      <div class="column">
+        <div class="column__item">
+          <img src={photos[2].link} alt="" />
+        </div>
+        <div class="column__item">
+          <img src={photos[3].link} alt="" />
+        </div>
+        <div class="column__item">
+          <img src={photos[4].link} alt="" />
+        </div>
+      </div>
+      <div class="column">
+        <div class="column__item">
+          <img src={photos[5].link} alt="" />
+        </div>
+        <div class="column__item">
+          <img src={photos[6].link} alt="" />
+        </div>
+      </div>
+    </div>
+  </main>
+</Layout>
+
+<style lang="scss">
+  main {
+  }
+
+  h2 {
+    font-size: 36px;
+    font-weight: 400;
+    margin-inline: 36px;
+  }
+  .columns {
+    display: flex;
+    flex-direction: column;
+    background-color: #f6f6f6;
+
+    @media (min-width: 768px) {
+      flex-direction: row;
+    }
+  }
+
+  .column {
+    width: 100%;
+
+    @media (min-width: 768px) {
+      width: 33.33%;
+    }
+
+    &__item {
+      width: 100%;
+
+      img {
+        width: 100%;
+        display: block;
+      }
+    }
+  }
+</style>
