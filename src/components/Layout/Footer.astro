@@ -1,9 +1,99 @@
 ---
 ---
 
-<main class="footer">footer</main>
+<main class="footer">
+  <h2>Get in Contact</h2>
+  <br />
+  <div class="items">
+    <ul class="contact">
+      <li>
+        <a href="mailto:aidantilgner02@gmail.com">aidantilgner02@gmail.com</a>
+      </li>
+      <li><a href="tel:5032007472">Call Aidan</a></li>
+      <li><a href="mailto:laneybrokaw@gmail.com">laneybrokaw@gmail.com</a></li>
+      <li><a href="tel:5038718459">Call Laney</a></li>
+    </ul>
+    <ul class="quicklinks">
+      <li>
+        <a href="/">Home</a>
+      </li>
+      <li>
+        <a href="/wedding-party">Wedding Party</a>
+      </li>
+      <li>
+        <a href="/rsvp">RSVP</a>
+      </li>
+      <li>
+        <a href="/faqs">FAQ's</a>
+      </li>
+      <li>
+        <a href="/gifts">Gifts</a>
+      </li>
+      <li>
+        <a href="/gallery">Gallery</a>
+      </li>
+    </ul>
+  </div>
+</main>
 
-<style>
+<style lang="scss">
   .footer {
+    min-height: 50vh;
+    background-color: #fff;
+    padding-inline: 36px;
+    padding-block: 24px;
+    box-shadow: inset 0.2px 0.2px 36px rgba(0, 0, 0, 0.1);
+
+    @media (min-width: 768px) {
+      padding-block: 36px;
+    }
+
+    h2 {
+      font-weight: 500;
+      margin: 0;
+    }
+  }
+
+  .items {
+    @media (min-width: 768px) {
+      display: flex;
+      justify-content: space-between;
+      gap: 36px;
+    }
+
+    ul {
+      list-style: none;
+      padding-inline: 0;
+      margin-bottom: 36px;
+      box-sizing: border-box;
+
+      @media (min-width: 768px) {
+        flex-grow: 1;
+      }
+
+      li {
+        margin-block: 14px;
+
+        a {
+          color: rgba($color: #000000, $alpha: 0.75);
+          text-decoration: none;
+          font-weight: 500;
+          font-size: 16px;
+          transition: all 0.3s ease-in-out;
+
+          &:hover {
+            color: rgba($color: #000000, $alpha: 1);
+            padding-left: 12px;
+            border-left: 2px solid var(--sage-green);
+          }
+
+          &:active {
+            color: rgba($color: #000000, $alpha: 0.9);
+            padding-left: 0;
+            border-left: none;
+          }
+        }
+      }
+    }
   }
 </style>

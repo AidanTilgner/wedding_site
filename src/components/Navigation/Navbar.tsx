@@ -80,7 +80,7 @@ function Navbar() {
             <a href="/">Home</a>
           </li>
           <li>
-            <a href="/wedding-party">Home</a>
+            <a href="/wedding-party">Party</a>
           </li>
           <li>
             <a href="/rsvp">RSVP</a>
