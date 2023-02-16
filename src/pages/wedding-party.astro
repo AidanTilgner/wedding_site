@@ -1,7 +1,212 @@
 ---
 import Layout from "../layouts/Layout.astro";
+
+const party = {
+  maid_of_honor: {
+    name: "Makenna Brokaw",
+  },
+  best_man: {
+    name: "Zachary Dewey",
+  },
+  mother_of_the_bride: {
+    name: "Wendy Brokaw",
+  },
+  mother_of_the_groom: {
+    name: "Priscilla De Leon-Cuff",
+  },
+  father_of_the_bride: {
+    name: "Miles Brokaw",
+  },
+  father_of_the_groom: {
+    name: "Adam Tilgner",
+  },
+  bridesmaids: [
+    {
+      name: "Alexis Cipri",
+    },
+    {
+      name: "Paris Cutten",
+    },
+    {
+      name: "Paris Tilgner",
+    },
+    {
+      name: "Janna",
+    },
+    {
+      name: "Bella Poma",
+    },
+  ],
+  groomsman: [
+    {
+      name: "Isaac Martin",
+    },
+    {
+      name: "Isaiah Martin",
+    },
+    {
+      name: "Jason Thao",
+    },
+    {
+      name: "James Tanikawa",
+    },
+    {
+      name: "Tobin Riddle",
+    },
+  ],
+};
 ---
 
 <Layout title="Wedding Party">
-    Wedding Party
+  <main>
+    <h2>Wedding Party</h2>
+    <div class="party">
+      <section class="individuals">
+        <div class="person pink brighter">
+          <h3>Maid of Honor</h3>
+          <p>{party.maid_of_honor.name}</p>
+        </div>
+        <div class="person green brighter">
+          <h3>Best Man</h3>
+          <p>{party.best_man.name}</p>
+        </div>
+        <div class="person pink brighter">
+          <h3>Mother of the Bride</h3>
+          <p>{party.mother_of_the_bride.name}</p>
+        </div>
+        <div class="person green brighter">
+          <h3>Mother of the Groom</h3>
+          <p>{party.mother_of_the_groom.name}</p>
+        </div>
+        <div class="person pink brighter">
+          <h3>Father of the Bride</h3>
+          <p>{party.father_of_the_bride.name}</p>
+        </div>
+        <div class="person green brighter">
+          <h3>Father of the Groom</h3>
+          <p>{party.father_of_the_groom.name}</p>
+        </div>
+      </section>
+      <section class="bridesmaids">
+        {
+          party.bridesmaids.map((bridesmaid) => (
+            <div class="person pink">
+              <h3>Bridesmaid</h3>
+              <p>{bridesmaid.name}</p>
+            </div>
+          ))
+        }
+      </section>
+      <section class="groomsmen">
+        {
+          party.groomsman.map((groomsman) => (
+            <div class="person green">
+              <h3>Groomsman</h3>
+              <p>{groomsman.name}</p>
+            </div>
+          ))
+        }
+      </section>
+    </div>
+  </main>
 </Layout>
+
+<style lang="scss">
+  main {
+    padding-block-end: 82px;
+
+    h2 {
+      font-size: 36px;
+      font-weight: 400;
+      margin-inline: 36px;
+      margin-bottom: 0;
+
+      @media (min-width: 768px) {
+        font-size: 48px;
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  section {
+    padding-inline: 36px;
+    border-bottom: 1px solid rgba($color: #000000, $alpha: 0.05);
+    padding-block: 56px;
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  .party {
+    .individuals {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-gap: 24px;
+
+      @media (min-width: 768px) {
+        grid-template-columns: 1fr 1fr;
+        grid-row-gap: 24px;
+        grid-column-gap: 36px;
+      }
+    }
+
+    .bridesmaids,
+    .groomsmen {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-gap: 24px;
+
+      @media (min-width: 768px) {
+        grid-template-columns: 1fr 1fr;
+        grid-row-gap: 24px;
+        grid-column-gap: 36px;
+      }
+    }
+
+    .person {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      padding: 14px;
+      padding-left: 24px;
+      border-left: 3px solid;
+      gap: 14px;
+      box-shadow: 0.2px 0.2px 10px rgba($color: #000000, $alpha: 0.05);
+      transition: all 0.2s ease-in-out;
+
+      &:hover {
+        box-shadow: 0.2px 0.2px 10px rgba($color: #000000, $alpha: 0.075);
+      }
+
+      h3 {
+        font-size: 24px;
+        font-weight: 600;
+        margin: 0;
+        font-family: var(--font-secondary);
+      }
+
+      p {
+        font-size: 16px;
+        font-weight: 400;
+        margin: 0;
+      }
+    }
+    .pink {
+      border-left-color: rgba($color: #ffbe9b, $alpha: 0.5);
+
+      &.brighter {
+        border-left-color: rgba($color: #ffbe9b, $alpha: 1) !important;
+      }
+    }
+
+    .green {
+      border-left-color: rgba($color: #aabfb3, $alpha: 0.5);
+
+      &.brighter {
+        border-left-color: rgba($color: #aabfb3, $alpha: 1) !important;
+      }
+    }
+  }
+</style>
