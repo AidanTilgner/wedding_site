@@ -1,5 +1,65 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import Questions from "../components/sections/Questions";
+
+const faqs = [
+  {
+    question: "Where is the wedding?",
+    answer: `
+        The wedding will be held at the beautiful <a
+            href="https://www.greenvilla.us/" target="_blank">Green Villa</a
+          > barn. You can find directions <a target="_blank"
+            href="https://goo.gl/maps/9J5v2maCQZ6u5Dgw7">here</a
+          >.
+        `,
+  },
+  {
+    question: "What time is the wedding?",
+    answer: `
+        The ceremony will begin at 4:00pm. The reception will begin at 5:45pm.
+        `,
+  },
+  {
+    question: "What should I wear?",
+    answer: `
+        The dress code will be semi-formal, plan for a hot summer day at the end of August, and pictures will
+        be taken throughout the event.
+        `,
+  },
+  {
+    question: "Who is invited?",
+    answer: `
+        Invites were sent out to family and close friends. If you did not recieve an invite, but would like to attend,
+        please contact us.
+        `,
+  },
+  {
+    question: "How do I find my invite?",
+    answer: `
+        You should have received an email or a text message with a link to your invite. If you did not recieve an invite,
+        or have lost your invite, please contact us and we will clear it up. Once you have your invite, you should be able
+        to access it from this website as well at <a href="/your-invite">this link</a>.
+    `,
+  },
+];
 ---
 
-<Layout title="FAQ's">Frequently Asked Questions</Layout>
+<Layout title="FAQ's">
+  <main>
+    <h2>Frequently Asked Questions</h2>
+    <div class="questions">
+      <Questions client:load questions={faqs} />
+    </div>
+  </main>
+</Layout>
+
+<style lang="scss">
+  main {
+    padding-inline: 36px;
+    padding-block-end: 56px;
+  }
+  h2 {
+    font-size: 36px;
+    font-weight: 400;
+  }
+</style>
