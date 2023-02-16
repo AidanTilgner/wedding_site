@@ -6,13 +6,15 @@ import Layout from "../layouts/Layout.astro";
 
 <Layout title="Home">
   <main>
-    <section class="countdown">
-      <h1 class="title">Countdown</h1>
-      <p class="caption">
-        The Wedding will be held at 4pm on Monday, August 28th
-      </p>
-      <div class="countdown-container">
-        <Countdown client:load date={new Date("2023-08-28T16:00:00.000Z")} />
+    <section class="hero">
+      <div class="countdown">
+        <h1 class="title">Countdown</h1>
+        <p class="caption">
+          The Wedding will be held at 4pm on Monday, August 28th
+        </p>
+        <div class="countdown-container">
+          <Countdown client:load date={new Date("2023-08-28T16:00:00.000Z")} />
+        </div>
       </div>
       <div class="buttons">
         <div class="cta">
@@ -66,14 +68,11 @@ import Layout from "../layouts/Layout.astro";
     padding-inline: 36px;
     padding-block: 36px;
     border-bottom: 1px solid #eaeaea;
+    min-height: calc(100vh - 82px);
 
     &:last-child {
       border-bottom: none;
     }
-  }
-
-  .countdown {
-    height: calc(100vh - 82px);
   }
 
   .title {
@@ -96,12 +95,19 @@ import Layout from "../layouts/Layout.astro";
     text-align: center;
   }
 
-  .countdown {
+  .hero {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: center;
     box-sizing: border-box;
+
+    .countdown {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
 
     .buttons {
       margin-top: 56px;
@@ -152,6 +158,11 @@ import Layout from "../layouts/Layout.astro";
   }
 
   .story {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
     .paragraphs {
       // grid, 2 columns
       display: grid;
@@ -160,6 +171,12 @@ import Layout from "../layouts/Layout.astro";
 
       @media (min-width: 768px) {
         grid-template-columns: 1fr 1fr;
+      }
+
+      p {
+        font-weight: 300;
+        line-height: 24px;
+        font-size: 16px;
       }
     }
   }

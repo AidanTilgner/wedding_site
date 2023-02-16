@@ -41,16 +41,17 @@
     min-height: 50vh;
     background-color: #fff;
     padding-inline: 36px;
-    padding-block: 24px;
-    box-shadow: inset 0.2px 0.2px 36px rgba(0, 0, 0, 0.1);
+    padding-block: 36px;
+    box-shadow: inset 0.2px 0.2px 24px rgba(0, 0, 0, 0.1);
 
     @media (min-width: 768px) {
       padding-block: 36px;
     }
 
     h2 {
-      font-weight: 500;
+      font-weight: 400;
       margin: 0;
+      font-size: 36px;
     }
   }
 
@@ -68,29 +69,39 @@
       box-sizing: border-box;
 
       @media (min-width: 768px) {
-        flex-grow: 1;
+        width: 45%;
       }
 
       li {
         margin-block: 14px;
+        box-sizing: border-box;
+        transition: all 0.3s ease-in-out;
+        width: fit-content;
+
+        &:hover {
+          padding-left: 12px;
+          border-left: 2px solid var(--sage-green);
+        }
+
+        &:active {
+          padding-left: 0;
+          border-left: none;
+        }
 
         a {
           color: rgba($color: #000000, $alpha: 0.75);
           text-decoration: none;
-          font-weight: 500;
+          font-weight: 300;
           font-size: 16px;
           transition: all 0.3s ease-in-out;
+          box-sizing: border-box;
 
           &:hover {
             color: rgba($color: #000000, $alpha: 1);
-            padding-left: 12px;
-            border-left: 2px solid var(--sage-green);
           }
 
           &:active {
             color: rgba($color: #000000, $alpha: 0.9);
-            padding-left: 0;
-            border-left: none;
           }
         }
       }
