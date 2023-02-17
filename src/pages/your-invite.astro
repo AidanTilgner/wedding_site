@@ -1,5 +1,28 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import YourInvite from "../components/Invite";
 ---
 
-<Layout title="your-invite">Your invite</Layout>
+<Layout title="your-invite">
+  <main>
+    <div class="invite">
+      <YourInvite client:load />
+    </div>
+  </main>
+</Layout>
+
+<style lang="scss">
+  main {
+    height: calc(100vh - 82px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .invite {
+    padding: 36px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+</style>
