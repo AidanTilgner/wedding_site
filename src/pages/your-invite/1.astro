@@ -1,12 +1,12 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import YourInvite from "../components/Invite";
+import Layout from "../../layouts/Layout.astro";
+import YourInvite from "../../components/Invite";
 ---
 
 <Layout title="your-invite" lowkey={true}>
   <main>
     <div class="invite">
-      <YourInvite client:load />
+      <YourInvite client:load step={1} />
     </div>
   </main>
 </Layout>
