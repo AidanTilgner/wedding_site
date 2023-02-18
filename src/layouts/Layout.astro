@@ -1,9 +1,10 @@
 ---
 export interface Props {
   title: string;
+  lowkey?: boolean;
 }
 
-const { title } = Astro.props;
+const { title, lowkey } = Astro.props;
 import Navbar from "../components/Navigation/Navbar";
 import Footer from "../components/Layout/Footer.astro";
 ---
@@ -25,8 +26,9 @@ import Footer from "../components/Layout/Footer.astro";
     <title>Our Wedding | {title}</title>
   </head>
   <body>
-    <Navbar client:load />
+    <Navbar client:load lowkey={lowkey} />
     <slot />
+
     <Footer />
     <style is:global>
       :root {

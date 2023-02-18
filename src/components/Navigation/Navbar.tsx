@@ -2,13 +2,13 @@ import React, { useState } from "react";
 import Button from "../Buttons/Button";
 import Styles from "./Navbar.module.scss";
 
-function Navbar() {
+function Navbar({ lowkey }: { lowkey?: boolean }) {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className={Styles.navbar}>
+    <div className={`${Styles.navbar} ${lowkey && Styles.lowkey}`}>
       <div className={Styles.navbar_mobile}>
-        {!open && (
+        {!open && !lowkey && (
           <div className={Styles.title_mobile}>
             <p>The Wedding of</p>
             <h2>Laney and Aidan</h2>

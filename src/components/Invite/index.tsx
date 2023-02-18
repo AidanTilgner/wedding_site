@@ -14,7 +14,23 @@ function YourInvite() {
 
   console.log("InviteID", inviteID);
 
-  return <div className={Styles.invite}>index</div>;
+  return (
+    <div className={Styles.invite}>
+      <div className={Styles.date}>
+        <p>08.28.23</p>
+      </div>
+      <div className={Styles.title}>
+        <h1>You're Invited</h1>
+      </div>
+      <div className={Styles.line}></div>
+      <div className={Styles.text}>
+        <p>Laney Brokaw and Aidan Tilgner are getting married!</p>
+      </div>
+      <div className={Styles.cta}>
+        <button>Continue</button>
+      </div>
+    </div>
+  );
 }
 
 export default YourInvite;

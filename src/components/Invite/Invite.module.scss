@@ -1,6 +1,154 @@
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap");
+
 .invite {
   width: 100%;
-  height: 75vh;
-  outline: 1px solid red;
+  height: 100%;
   box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 36px;
+  padding: 24px;
+}
+
+@keyframes dateIn {
+  0% {
+    opacity: 0;
+    transform: translateY(25vw);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.date {
+  font-family: "Merriweather", serif;
+
+  p {
+    font-size: 20px;
+    color: var(--text-color);
+    letter-spacing: 14px;
+    font-weight: 300;
+    margin: 0;
+    animation-name: dateIn;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+  }
+}
+
+@keyframes titleIn {
+  0% {
+    opacity: 0;
+    transform: translateY(25vw);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.title {
+  h1 {
+    margin: 0;
+    font-size: 48px;
+    font-family: "Dancing Script", cursive;
+    color: var(--text-color);
+    animation-name: titleIn;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+  }
+}
+
+@keyframes lineIn {
+  0% {
+    height: 0;
+    opacity: 0;
+    transform: translateY(20vh);
+  }
+  25% {
+    opacity: 1;
+  }
+  50% {
+    transform: translateX(0);
+  }
+  100% {
+    width: 2px;
+    height: 200px;
+  }
+}
+
+.line {
+  width: 2px;
+  height: 200px;
+  color: var(--text-color);
+  background-color: var(--text-color);
+  animation-name: lineIn;
+  animation-duration: 4s;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes textIn {
+  0% {
+    opacity: 0;
+  }
+  35% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.text {
+  p {
+    font-size: 20px;
+    font-family: "Merriweather", serif;
+    color: var(--text-color);
+    font-weight: 300;
+    margin: 0;
+    animation-name: textIn;
+    animation-duration: 4.5s;
+    animation-timing-function: ease-in-out;
+  }
+}
+
+@keyframes ctaIn {
+  0% {
+    opacity: 0;
+  }
+  35% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.cta {
+  margin-top: 36px;
+
+  button {
+    border: none;
+    font-size: 24px;
+    background-color: transparent;
+    font-family: "Dancing Script", cursive;
+    color: var(--text-color);
+    cursor: pointer;
+    animation-name: ctaIn;
+    animation-duration: 6s;
+    animation-timing-function: ease-in-out;
+    border-bottom: 1px solid black;
+    padding: 0;
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+      padding-bottom: 5px;
+      padding-left: 10px;
+      border-bottom-width: 1.5px;
+      border-bottom-color: var(--sage-green);
+      border-left: 1.5px solid var(--sage-green);
+    }
+  }
 }
