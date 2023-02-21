@@ -1,2 +1,31 @@
 ---
+import Layout from "../../layouts/Layout.astro";
+import FindInvite from "../../components/Invite/Find/index";
 ---
+
+<Layout title="Find your Invite">
+  <main>
+    <h1>Find your Invite</h1>
+    <br />
+    <div class="find">
+      <FindInvite client:load />
+    </div>
+  </main>
+</Layout>
+
+<style lang="scss">
+  main {
+    padding-inline: 36px;
+    text-align: center;
+    padding-block: 56px;
+  }
+
+  h1 {
+    font-size: 36px;
+    font-weight: 400;
+  }
+  .find {
+    display: flex;
+    justify-content: center;
+  }
+</style>
