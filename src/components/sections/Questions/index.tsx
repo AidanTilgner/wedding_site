@@ -33,7 +33,7 @@ function Questions({ questions }: QuestionsProps) {
       </div>
       <div className={Styles.questions}>
         {filteredQuestions.map(({ question, answer }) => (
-          <div className={Styles.question}>
+          <div className={Styles.question} key={question}>
             <h3>{question}</h3>
             <p
               dangerouslySetInnerHTML={{
