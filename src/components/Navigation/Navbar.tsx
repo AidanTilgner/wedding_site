@@ -6,7 +6,7 @@ function Navbar({ lowkey }: { lowkey?: boolean }) {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className={`${Styles.navbar} ${lowkey && Styles.lowkey}`}>
+    <div className={`${Styles.navbar} ${lowkey ? Styles.lowkey : ""}`}>
       <div className={Styles.navbar_mobile}>
         {!open && !lowkey && (
           <div className={Styles.title_mobile}>

@@ -5,14 +5,28 @@ function YourInvite({ step }: { step: number }) {
   const [inviteID, setInviteID] = useState<string | null>(null);
   const [guest, setGuest] = useState<Guest | null>(null);
 
-  useEffect(() => {
-    const params = new URLSearchParams(window.location.search);
-    const id = params.get("id");
+  const getGuestById = async (id: string) => {
+    const data = await fetch(`/api/guests/find?id=${id}`).then((res) =>
+      res.json()
+    );
 
-    setInviteID(id);
+    setGuest(data);
+  };
+
+  useEffect(() => {
+    const inviteID =
+      new URLSearchParams(window.location.search).get("id") ||
+      localStorage.getItem("inviteID");
+
+    if (inviteID) {
+      localStorage.setItem("inviteID", inviteID);
+      setInviteID(inviteID);
+      getGuestById(inviteID);
+    }
   }, []);
 
   console.log("InviteID", inviteID);
+  console.log("Guest", guest);
 
   switch (step) {
     case 1:

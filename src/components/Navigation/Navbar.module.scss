@@ -12,6 +12,7 @@
   justify-content: space-between;
   align-items: center;
   z-index: 10;
+  background-color: #ffffff;
 
   @media (min-width: 768px) {
     height: 100px;
@@ -41,9 +42,9 @@
   background-color: transparent;
   position: fixed;
 
-  .menu_closed line {
-    background-color: #fff;
-  }
+  // .menu_closed line {
+  //   background-color: #fff;
+  // }
 }
 
 .menu {

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Styles from "./Find.module.scss";
 
 function index() {
-  const [query, setQuery] = useState("Aidan Tilgner");
+  const [query, setQuery] = useState("");
   const [typingTimeout, setTypingTimeout] = useState<number>();
   const [result, setResult] = useState<Guest>();
 
@@ -31,6 +31,10 @@ function index() {
       }, 500)
     );
 
+    if (query.length < 3) {
+      setResult(undefined);
+    }
+
     return () => {
       if (typingTimeout) {
         clearTimeout(typingTimeout);
@@ -40,7 +44,7 @@ function index() {
 
   const handleSelectInvite = () => {
     if (!result) return;
-    window.location.href = `/invite/${result?.id}`;
+    window.location.href = `/invite/view?id=${result?.id}`;
   };
 
   return (
@@ -55,11 +59,21 @@ function index() {
         />
       </div>
       <div className={Styles.result}>
-        <h3>Results:</h3>
-        {query.length > 2 && result && (
-          <div className={Styles.guestCard} onClick={handleSelectInvite}>
-            <p>{`${result.first_name} ${result.last_name}`}</p>
-          </div>
+        {query.length > 2 && result ? (
+          <>
+            <h3>Results:</h3>
+            <div className={Styles.guestCard} onClick={handleSelectInvite}>
+              <p>{`${result.first_name} ${result.last_name}`}</p>
+            </div>
+          </>
+        ) : (
+          query.length > 2 &&
+          !result && (
+            <p className={Styles.sorry_text}>
+              Looks like we can't find your invite :/ . If you believe this is a
+              mistake, please contact us and we'll figure it out :D
+            </p>
+          )
         )}
       </div>
     </div>

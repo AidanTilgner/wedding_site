@@ -4,6 +4,17 @@ import { guestsAPI } from "../../../utils/axios";
 export const get: APIRoute = async ({ params, url }) => {
   try {
     const name = url.searchParams.get("name");
+    const id = url.searchParams.get("id");
+
+    if (id) {
+      const { data } = await guestsAPI.get(`/guests/${id}`);
+      return new Response(JSON.stringify(data), {
+        headers: {
+          "content-type": "application/json;charset=UTF-8",
+        },
+        status: 200,
+      });
+    }
 
     if (name) {
       const { data } = await guestsAPI.get(`/guests/find?name=${name}`);
