@@ -48,7 +48,7 @@ function Navbar({ lowkey }: { lowkey?: boolean }) {
                 <a href="/wedding-party">Wedding Party</a>
               </li>
               <li>
-                <a href="/your-invite">Your Invite</a>
+                <a href="/invite">Your Invite</a>
               </li>
               <li>
                 <a href="/faqs">FAQ's</a>
@@ -64,7 +64,7 @@ function Navbar({ lowkey }: { lowkey?: boolean }) {
               <p>Have an invite?</p>
               <Button
                 onClick={() => {
-                  window.location.href = "/your-invite";
+                  window.location.href = "/invite";
                 }}
                 type="primary"
               >
@@ -83,7 +83,7 @@ function Navbar({ lowkey }: { lowkey?: boolean }) {
             <a href="/wedding-party">Party</a>
           </li>
           <li>
-            <a href="/your-invite">Your Invite</a>
+            <a href="/invite">Your Invite</a>
           </li>
         </ul>
         <div className={Styles.title}>
