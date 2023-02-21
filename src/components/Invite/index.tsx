@@ -25,9 +25,6 @@ function YourInvite({ step }: { step: number }) {
     }
   }, []);
 
-  console.log("InviteID", inviteID);
-  console.log("Guest", guest);
-
   switch (step) {
     case 1:
       return <Step1 />;
