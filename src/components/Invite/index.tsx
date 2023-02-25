@@ -57,7 +57,26 @@ function YourInvite() {
   };
 
   if (loading) {
-    return <div>Loading...</div>;
+    return (
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          height: "100vh",
+        }}
+      >
+        <h1
+          style={{
+            fontFamily: "Dancing Script, cursive",
+            fontSize: "56px",
+            fontWeight: "500",
+          }}
+        >
+          Loading...
+        </h1>
+      </div>
+    );
   }
 
   switch (step) {
@@ -254,12 +273,22 @@ const Step3 = ({
       <ul className={Step3Styles.navigation}>
         {!guest?.rsvp && (
           <li>
-            <p>RSVP to the wedding!</p>
+            <p>
+              RSVP to the wedding as "{guest?.first_name} {guest?.last_name}"
+            </p>
             <Button onClick={rsvpGuest} type="primary">
               I'm coming!
             </Button>
           </li>
         )}
+        <li>
+          <p>
+            If you have multiple invites, add another by going to{" "}
+            <a href="/invite">this page</a> and clicking "Find Invitation". Or
+            if you have multiple links, you can use them to find invites for
+            other guests.
+          </p>
+        </li>
         <li>
           <p>
             Find answers to some <a href="/faqs">frequently asked questions</a>
