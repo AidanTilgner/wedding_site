@@ -48,7 +48,7 @@ function Navbar({ lowkey }: { lowkey?: boolean }) {
                 <a href="/wedding-party">Wedding Party</a>
               </li>
               <li>
-                <a href="/invite">Your Invite</a>
+                <a href="/invite">Invitation</a>
               </li>
               <li>
                 <a href="/faqs">FAQ's</a>
@@ -83,7 +83,7 @@ function Navbar({ lowkey }: { lowkey?: boolean }) {
             <a href="/wedding-party">Party</a>
           </li>
           <li>
-            <a href="/invite">Your Invite</a>
+            <a href="/invite">Invitation</a>
           </li>
         </ul>
         <div className={Styles.title}>

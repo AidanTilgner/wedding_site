@@ -3,22 +3,22 @@ import Button from "../../components/Buttons/Button";
 import Layout from "../../layouts/Layout.astro";
 ---
 
-<Layout title="Your Invite" lowkey={false}>
+<Layout title="Your Invitation" lowkey={false}>
   <main>
     <div class="title">
-      <h2>Your invite</h2>
-      <p>This is the hub for all things to do with your invite.</p>
+      <h2>Your invitation</h2>
+      <p>This is the hub for all things to do with your invitation.</p>
     </div>
     <ul class="navigation">
       <li>
-        <p>If you need to find your invite</p>
+        <p>If you need to find your invitation</p>
         <Button link="/invite/find" type="primary" client:visible>
           Click Here
         </Button>
       </li>
       <li>
         <p>
-          If you've already viewed your invite on this browser, it should be
+          If you've already viewed your invitation on this browser, it should be
           here
         </p>
         <Button link="/invite/view" type="secondary" client:visible>

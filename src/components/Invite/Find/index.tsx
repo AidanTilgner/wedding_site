@@ -70,8 +70,8 @@ function index() {
           query.length > 2 &&
           !result && (
             <p className={Styles.sorry_text}>
-              Looks like we can't find your invite :/ . If you believe this is a
-              mistake, please contact us and we'll figure it out :D
+              Looks like we can't find your invitation :/ . If you believe this
+              is a mistake, please contact us and we'll figure it out :D
             </p>
           )
         )}
