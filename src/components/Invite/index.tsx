@@ -18,11 +18,14 @@ function YourInvite({ step }: { step: number }) {
       new URLSearchParams(window.location.search).get("id") ||
       localStorage.getItem("inviteID");
 
-    if (inviteID) {
-      localStorage.setItem("inviteID", inviteID);
-      setInviteID(inviteID);
-      getGuestById(inviteID);
+    if (!inviteID) {
+      window.location.href = "/invite/not-found";
+      return;
     }
+
+    localStorage.setItem("inviteID", inviteID);
+    setInviteID(inviteID);
+    getGuestById(inviteID);
   }, []);
 
   switch (step) {

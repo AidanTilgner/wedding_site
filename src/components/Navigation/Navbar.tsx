@@ -61,7 +61,7 @@ function Navbar({ lowkey }: { lowkey?: boolean }) {
               </li>
             </ul>
             <div className={Styles.rsvp}>
-              <p>Have an invite?</p>
+              <p>Have an invitation?</p>
               <Button
                 onClick={() => {
                   window.location.href = "/invite";

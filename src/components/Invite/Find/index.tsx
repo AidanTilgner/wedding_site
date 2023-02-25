@@ -62,7 +62,11 @@ function index() {
         {query.length > 2 && result ? (
           <>
             <h3>Results:</h3>
-            <div className={Styles.guestCard} onClick={handleSelectInvite}>
+            <div
+              className={Styles.guestCard}
+              onClick={handleSelectInvite}
+              tabIndex={0}
+            >
               <p>{`${result.first_name} ${result.last_name}`}</p>
             </div>
           </>
