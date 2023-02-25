@@ -8,11 +8,11 @@ function index() {
 
   const handleSearch = async () => {
     try {
-      const data = await fetch(`/api/guests/find?name=${query}`).then((res) =>
-        res.json()
-      );
+      const { message, guest } = await fetch(
+        `/api/guests/find?name=${query}`
+      ).then((res) => res.json());
 
-      setResult(data);
+      setResult(guest);
     } catch (err) {
       console.error(err);
     }

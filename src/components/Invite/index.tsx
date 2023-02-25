@@ -6,18 +6,18 @@ import Step3Styles from "./Step3.module.scss";
 import Button from "../Buttons/Button";
 
 function YourInvite() {
-  const [step, setStep] = useState(2);
+  const [step, setStep] = useState(1);
   const [inviteID, setInviteID] = useState<string | null>(null);
   const [guest, setGuest] = useState<Guest | null>(null);
   const [loading, setLoading] = useState(true);
 
   const getGuestById = async (id: string) => {
     setLoading(true);
-    const data = await fetch(`/api/guests/find?id=${id}`).then((res) =>
-      res.json()
+    const { message, guest } = await fetch(`/api/guests/find?id=${id}`).then(
+      (res) => res.json()
     );
 
-    setGuest(data);
+    setGuest(guest);
     setLoading(false);
   };
 
@@ -48,6 +48,14 @@ function YourInvite() {
     };
   }, []);
 
+  const rsvpGuest = async () => {
+    const { message, guest } = await fetch(`/api/guests/rsvp?id=${inviteID}`, {
+      method: "POST",
+    }).then((res) => res.json());
+
+    setGuest(guest);
+  };
+
   if (loading) {
     return <div>Loading...</div>;
   }
@@ -59,7 +67,11 @@ function YourInvite() {
       return <Step2 guest={guest} incrementStep={() => setStep(3)} />;
     case 3:
       return (
-        <Step3 guest={guest} setStep={(step: 1 | 2 | 3) => setStep(step)} />
+        <Step3
+          guest={guest}
+          setStep={(step: 1 | 2 | 3) => setStep(step)}
+          rsvpGuest={rsvpGuest}
+        />
       );
   }
 }
@@ -206,9 +218,11 @@ const Step2 = ({
 const Step3 = ({
   guest,
   setStep,
+  rsvpGuest,
 }: {
   guest: Guest | null;
   setStep: (step: 1 | 2 | 3) => void;
+  rsvpGuest: () => void;
 }) => {
   document.documentElement.style.setProperty("--navbar-display", "flex");
 
@@ -228,10 +242,24 @@ const Step3 = ({
         <h2>Next Steps</h2>
       </div>
       <p className={Step3Styles.notice}>
-        RSVPs will be available soon, so keep an eye out for that! Until then,
-        here are some other things you can do
+        {guest?.rsvp ? (
+          <span>
+            RSVP confirmed for {guest?.first_name} {guest?.last_name}! We can't
+            wait to see you on <strong>August 28th, 2023</strong>!
+          </span>
+        ) : (
+          <span>* Please RSVP by August 1st, 2023</span>
+        )}
       </p>
       <ul className={Step3Styles.navigation}>
+        {!guest?.rsvp && (
+          <li>
+            <p>RSVP to the wedding!</p>
+            <Button onClick={rsvpGuest} type="primary">
+              I'm coming!
+            </Button>
+          </li>
+        )}
         <li>
           <p>
             Find answers to some <a href="/faqs">frequently asked questions</a>
@@ -244,10 +272,11 @@ const Step3 = ({
           </p>
         </li>
         <li>
-          <p>Replay your wedding invitation</p>
-          <Button onClick={replayInvite} type="secondary">
-            Click Here
-          </Button>
+          <p>
+            <a onClick={replayInvite} href="#">
+              Replay your wedding invitation
+            </a>
+          </p>
         </li>
       </ul>
       <p className={Step3Styles.note}>
