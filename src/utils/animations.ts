@@ -1,5 +1,3 @@
-import anime from "animejs/lib/anime.es.js";
-
 export const staggerText = (textWrapper: Element, delay: number = 0) => {
   const t = setTimeout(() => {
     textWrapper.innerHTML = textWrapper.textContent
@@ -9,12 +7,21 @@ export const staggerText = (textWrapper: Element, delay: number = 0) => {
         )
       : "";
 
-    anime.timeline({ loop: false }).add({
-      targets: ".staggered-text .letter",
-      opacity: [0, 1],
-      easing: "easeOutExpo",
-      duration: 4000,
-      delay: (el, i) => 65 * (i + 1),
+    const letters: NodeListOf<HTMLSpanElement> = document.querySelectorAll(
+      ".staggered-text .letter"
+    );
+    letters.forEach((letter, i) => {
+      letter.style.opacity = "0";
+      setTimeout(() => {
+        letter
+          .animate([{ opacity: 0 }, { opacity: 1 }], {
+            duration: 4000,
+            easing: "ease-out",
+          })
+          .finished.then(() => {
+            letter.style.opacity = "1";
+          });
+      }, 65 * (i + 1));
     });
   }, delay);
 

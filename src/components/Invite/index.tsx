@@ -302,7 +302,12 @@ const Step3 = ({
         </li>
         <li>
           <p>
-            <a onClick={replayInvite} href="#">
+            <a
+              onClick={replayInvite}
+              style={{
+                cursor: "pointer",
+              }}
+            >
               Replay your wedding invitation
             </a>
           </p>
