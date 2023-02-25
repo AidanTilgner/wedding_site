@@ -68,7 +68,7 @@ function Navbar({ lowkey }: { lowkey?: boolean }) {
                 }}
                 type="primary"
               >
-                RSVP Now!
+                Click Here
               </Button>
             </div>
           </div>

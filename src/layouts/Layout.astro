@@ -36,6 +36,7 @@ import Footer from "../components/Layout/Footer.astro";
         --sage-green: #aabfb3;
         --font-primary: "Lato", sans-serif;
         --font-secondary: "Dancing Script", cursive;
+        --navbar-display: flex;
       }
       html {
         font-family: system-ui, sans-serif;
@@ -69,6 +70,20 @@ import Footer from "../components/Layout/Footer.astro";
       .btn-primary {
         background-color: var(--sand);
         color: #242424;
+      }
+
+      .stagger-text {
+        font-weight: 700;
+        font-size: 3.5em;
+      }
+
+      .stagger-text .text-wrapper {
+        position: relative;
+        display: inline-block;
+      }
+
+      .stagger-text .letter {
+        display: inline-block;
       }
     </style>
   </body>

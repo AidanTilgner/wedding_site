@@ -5,31 +5,17 @@ import YourInvite from "../../components/Invite";
 
 <Layout title="Your Invitation" lowkey={true}>
   <main>
-    <div class="invite">
-      <YourInvite client:load step={1} />
-    </div>
+    <YourInvite client:load />
   </main>
 </Layout>
 
 <style lang="scss">
   main {
-    height: 100vh;
-    padding-block: 82px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     --text-color: #000;
     background-color: #fff;
-
-    @media (min-width: 768px) {
-      padding-block-start: 156px;
-    }
-  }
-
-  .invite {
-    width: 100%;
-    height: 100%;
-    box-sizing: border-box;
   }
 </style>

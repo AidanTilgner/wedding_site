@@ -13,6 +13,7 @@
   align-items: center;
   z-index: 10;
   background-color: #ffffff;
+  display: var(--navbar-display);
 
   @media (min-width: 768px) {
     height: 100px;

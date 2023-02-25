@@ -9,4 +9,5 @@ interface Guest {
   id: string;
   wedding_party: boolean;
   rsvp: boolean;
+  invitation_message: string;
 }
