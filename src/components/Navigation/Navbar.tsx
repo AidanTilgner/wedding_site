@@ -54,7 +54,7 @@ function Navbar({ lowkey }: { lowkey?: boolean }) {
                 <a href="/faqs">FAQ's</a>
               </li>
               <li>
-                <a href="/gifts">Gifts</a>
+                <a href="/donations">Donations</a>
               </li>
               <li>
                 <a href="/gallery">Gallery</a>
@@ -95,7 +95,7 @@ function Navbar({ lowkey }: { lowkey?: boolean }) {
             <a href="/faqs">FAQ's</a>
           </li>
           <li>
-            <a href="/gifts">Gifts</a>
+            <a href="/donations">Donations</a>
           </li>
           <li>
             <a href="/gallery">Gallery</a>
