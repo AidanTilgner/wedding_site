@@ -1,9 +1,22 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Button from "../Buttons/Button";
 import Styles from "./Navbar.module.scss";
 
-function Navbar({ lowkey }: { lowkey?: boolean }) {
+function Navbar({
+  lowkey,
+  pulses = false,
+}: {
+  lowkey?: boolean;
+  pulses?: boolean;
+}) {
   const [open, setOpen] = useState(false);
+  const [shouldPulse, setShouldPulse] = useState(pulses);
+
+  useEffect(() => {
+    if (open) {
+      setShouldPulse(false);
+    }
+  }, [open]);
 
   return (
     <div className={`${Styles.navbar} ${lowkey ? Styles.lowkey : ""}`}>
@@ -15,7 +28,9 @@ function Navbar({ lowkey }: { lowkey?: boolean }) {
           </div>
         )}
         <div
-          className={Styles.menu}
+          className={`${Styles.menu} ${
+            pulses && shouldPulse ? Styles.pulses : ""
+          }`}
           onClick={() => {
             setOpen(!open);
           }}

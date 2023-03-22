@@ -2,9 +2,10 @@
 export interface Props {
   title: string;
   lowkey?: boolean;
+  navbar_pulses?: boolean;
 }
 
-const { title, lowkey } = Astro.props;
+const { title, lowkey, navbar_pulses } = Astro.props;
 import Navbar from "../components/Navigation/Navbar";
 import Footer from "../components/Layout/Footer.astro";
 ---
@@ -26,7 +27,7 @@ import Footer from "../components/Layout/Footer.astro";
     <title>Our Wedding | {title}</title>
   </head>
   <body>
-    <Navbar client:load lowkey={lowkey} />
+    <Navbar client:load lowkey={lowkey} pulses={navbar_pulses} />
     <slot />
 
     <Footer />

@@ -48,11 +48,49 @@
   // }
 }
 
+@keyframes pulse {
+  // basically an after element where there is a little ring that starts out the radius of the circle and then expands outwards
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgb(255, 190, 155, 0.7);
+  }
+
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 10px rgb(255, 190, 155, 0);
+  }
+
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgb(255, 190, 155, 0);
+  }
+}
+
 .menu {
   position: absolute;
   top: 24px;
   right: 24px;
   z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &.pulses {
+    // an after element that is a circle
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: #fff;
+      animation: pulse 2s infinite;
+      background-color: transparent;
+      cursor: pointer;
+      top: -14px;
+    }
+  }
 
   &_icon {
     width: 30px;
