@@ -264,7 +264,7 @@ const Step3 = ({
         {guest?.rsvp ? (
           <span>
             RSVP confirmed for {guest?.first_name} {guest?.last_name}! We can't
-            wait to see you on <strong>August 28th, 2023</strong>!
+            wait to see you on <strong>August 28th, 2023, at 6:00pm!</strong>!
           </span>
         ) : (
           <span>* Please RSVP by August 1st, 2023</span>
