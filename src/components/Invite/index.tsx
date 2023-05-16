@@ -283,10 +283,7 @@ const Step3 = ({
         )}
         <li>
           <p>
-            If you have multiple invites, add another by going to{" "}
-            <a href="/invite">this page</a> and clicking "Find Invitation". Or
-            if you have multiple links, you can use them to find invites for
-            other guests.
+            If you have multiple invites, RSVP them <a href="/rsvp">here</a>.
           </p>
         </li>
         <li>

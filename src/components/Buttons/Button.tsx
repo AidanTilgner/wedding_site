@@ -15,11 +15,9 @@ function Button({
   const secondClass = type === "primary" ? Styles.primary : Styles.secondary;
 
   const handleClick = () => {
-    console.log("Handling click: ", onClick, link);
     if (onClick) {
       onClick();
     } else if (link) {
-      console.log("Hitting link: ", link);
       window.location.href = link;
     }
   };

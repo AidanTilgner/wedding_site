@@ -1,0 +1,37 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import RSVPButton from "../../components/RSVPButton";
+import FindInvite from "../../components/Invite/Find";
+---
+
+<Layout title="RSVP">
+  <main>
+    <section></section>
+    <section class="rsvp-section">
+      <RSVPButton client:load />
+    </section>
+    <section>
+      <FindInvite
+        client:load
+        displayText="RSVP for someone else..."
+        placeholder="Enter their name..."
+        redirectURL="/rsvp"
+      />
+    </section>
+  </main>
+</Layout>
+
+<style lang="scss">
+  section {
+    padding-inline: 36px;
+    padding-block: 36px;
+    border-bottom: 1px solid #eaeaea;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+</style>

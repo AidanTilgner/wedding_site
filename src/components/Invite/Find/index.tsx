@@ -1,10 +1,18 @@
 import React, { useEffect, useState } from "react";
 import Styles from "./Find.module.scss";
 
-function index() {
+function index({
+  displayText = "Type your full name",
+  placeholder = "Enter your name...",
+  redirectURL = "/invite/view",
+}: {
+  displayText?: string;
+  placeholder?: string;
+  redirectURL?: string;
+}) {
   const [query, setQuery] = useState("");
   const [typingTimeout, setTypingTimeout] = useState<number>();
-  const [result, setResult] = useState<Guest>();
+  const [result, setResult] = useState<Guest[]>();
 
   const handleSearch = async () => {
     try {
@@ -42,39 +50,49 @@ function index() {
     };
   }, [query]);
 
-  const handleSelectInvite = () => {
+  const handleSelectInvite = (id: string) => {
     if (!result) return;
-    window.location.href = `/invite/view?id=${result?.id}`;
+    window.location.href = `${redirectURL}?id=${id}`;
   };
 
   return (
     <div className={Styles.find}>
       <div className={Styles.search}>
-        <label htmlFor="search_invite">Type your full name...</label>
+        <label htmlFor="search_invite">{displayText}</label>
         <input
           id="search_invite"
-          placeholder="Enter your name..."
+          placeholder={placeholder}
           value={query}
           onChange={(e) => setQuery(e.target.value)}
         />
       </div>
       <div className={Styles.result}>
-        {query.length > 2 && result ? (
+        {query.length > 1 && result ? (
           <>
             <h3>Results:</h3>
-            <div
-              className={Styles.guestCard}
-              onClick={handleSelectInvite}
-              tabIndex={0}
-            >
-              <p>{`${result.first_name} ${result.last_name}`}</p>
-            </div>
+            {result.map((guest) => {
+              return (
+                <div
+                  className={Styles.guestCard}
+                  onClick={() => {
+                    handleSelectInvite(guest.id);
+                  }}
+                  tabIndex={0}
+                >
+                  <p>{`${guest.first_name} ${guest.last_name}`}</p>
+                </div>
+              );
+            })}
+            <p className={Styles.disclaimer}>
+              If you're not seeing the right name, feel free to contact us with
+              the information below.
+            </p>
           </>
         ) : (
           query.length > 2 &&
           !result && (
-            <p className={Styles.sorry_text}>
-              Looks like we can't find your invitation :/ . If you believe this
+            <p className={Styles.disclaimer}>
+              Looks like we can't find that invitation :/ . If you believe this
               is a mistake, please contact us and we'll figure it out :D
             </p>
           )
