@@ -78,6 +78,7 @@ function index({
                     handleSelectInvite(guest.id);
                   }}
                   tabIndex={0}
+                  key={guest.id}
                 >
                   <p>{`${guest.first_name} ${guest.last_name}`}</p>
                 </div>
