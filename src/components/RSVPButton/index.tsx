@@ -71,8 +71,8 @@ function index() {
     <div className={styles.RSVPButton}>
       {guest?.rsvp ? (
         <p>
-          Looks like {guest?.first_name} {guest?.last_name} is confirmed! View
-          the invitation <a href={`/invite/view?id=${inviteID}`}>here</a>.
+          Looks like {guest?.first_name} {guest?.last_name} is RSVPed! View the
+          invitation <a href={`/invite/view?id=${inviteID}`}>here</a>.
         </p>
       ) : (
         <button onClick={rsvpGuest}>
