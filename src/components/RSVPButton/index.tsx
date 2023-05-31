@@ -23,7 +23,7 @@ function index() {
       localStorage.getItem("inviteID");
 
     if (!inviteID) {
-      window.location.href = "/invite/not-found";
+      setLoading(false);
       return;
     }
 
@@ -65,6 +65,10 @@ function index() {
         </h1>
       </div>
     );
+  }
+
+  if (!guest) {
+    return <p>Try searching for your name below :)</p>;
   }
 
   return (
