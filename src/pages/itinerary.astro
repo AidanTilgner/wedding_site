@@ -1,0 +1,92 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Itinerary">
+  <main>
+    <div class="title">
+      <h2>Itinerary</h2>
+      <p>What the day will look like if all goes according to plan ;)</p>
+    </div>
+    <div class="schedule">
+      <h3>Schedule</h3>
+      <ul>
+        <li><strong>5:45pm</strong> - Guests take seats</li>
+        <li><strong>6:00pm</strong> - Ceremony begins</li>
+        <li>
+          <strong>Reception</strong>
+          <span class="spacer"></span>
+          <ul>
+            <li>Dinner</li>
+            <li>First Dance</li>
+            <li>Father/Daughter Dance</li>
+            <li>Mother/Son Dance</li>
+            <li>Cake Cutting / Toasts</li>
+            <li>More dancing!</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <br />
+    <div class="details">
+      <h3>Additional Details</h3>
+      <p>
+        <strong>Alcohol</strong> - drinks will be served from 6:30pm-8:30pm. The
+        bar only accepts cash.
+      </p>
+    </div>
+  </main>
+</Layout>
+
+<style lang="scss">
+  main {
+    padding-block: 82px;
+    padding-inline: 36px;
+
+    p {
+      font-size: 18px;
+      color: rgba($color: #000000, $alpha: 0.6);
+    }
+
+    h2 {
+      font-size: 36px;
+      font-weight: 400;
+    }
+
+    h3 {
+      font-size: 24px;
+      font-weight: 400;
+    }
+
+    p {
+      font-size: 18px;
+      font-weight: 400;
+      color: rgba($color: #000000, $alpha: 0.6);
+    }
+  }
+
+  .title {
+    margin-bottom: 36px;
+  }
+
+  .schedule {
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    li {
+      margin-bottom: 14px;
+
+      ul {
+        list-style: circle;
+        padding-inline-start: 36px;
+        margin-top: 8px;
+
+        li {
+          margin-bottom: 8px;
+        }
+      }
+    }
+  }
+</style>
