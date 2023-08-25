@@ -1,0 +1,39 @@
+.seatingChart {
+}
+
+.search {
+  margin-bottom: 3.6rem;
+
+  input {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 14px 24px;
+    border-radius: 5px;
+    border: 1px solid #eaeaea;
+    transition: all 0.3s ease-in-out;
+
+    &:focus {
+      outline: none;
+      border: 1px solid #000;
+    }
+  }
+}
+
+.table {
+  margin-bottom: 2.4rem;
+
+  h3 {
+    font-weight: 500;
+    margin-bottom: 1.4rem;
+    font-size: 1.8rem;
+  }
+
+  ul {
+    padding: 0;
+    list-style-type: none;
+
+    li {
+      margin-bottom: 0.8rem;
+    }
+  }
+}

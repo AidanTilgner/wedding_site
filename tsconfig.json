@@ -6,6 +6,7 @@
     // allow modules to not have a type declaration
     "skipLibCheck": true,
     // allow importing from node_modules
-    "allowJs": true
+    "allowJs": true,
+    "ignoreDeprecations": "5.0"
   }
 }
