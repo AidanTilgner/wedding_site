@@ -63,9 +63,6 @@ function Navbar({
                 <a href="/wedding-party">Wedding Party</a>
               </li>
               <li>
-                <a href="/invite">Invitation</a>
-              </li>
-              <li>
                 <a href="/faqs">FAQ's</a>
               </li>
               <li>
@@ -73,6 +70,9 @@ function Navbar({
               </li>
               <li>
                 <a href="/gallery">Gallery</a>
+              </li>
+              <li>
+                <a href="/info">Information</a>
               </li>
             </ul>
             <div className={Styles.rsvp}>
@@ -98,7 +98,7 @@ function Navbar({
             <a href="/wedding-party">Party</a>
           </li>
           <li>
-            <a href="/invite">Invitation</a>
+            <a href="/info">Information</a>
           </li>
         </ul>
         <div className={Styles.title}>

@@ -1,0 +1,101 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Information">
+  <main>
+    <section class="title">
+      <h2>Information</h2>
+      <p>Everything you need to know, in one place!</p>
+    </section>
+    <section class="links">
+      <ul>
+        <li>
+          <a href="/menu">Read the menu here</a>.
+          <i class="ph-bold ph-arrow-right"></i>
+        </li>
+        <li>
+          <a href="/seating-chart">View the seating chart</a>.
+          <i class="ph-bold ph-arrow-right"></i>
+        </li>
+        <li>
+          <a href="/itinerary">Check out the itinerary</a>.
+          <i class="ph-bold ph-arrow-right"></i>
+        </li>
+        <li>
+          <a href="/faqs">Read the Frequently Asked Questions</a>.<i
+            class="ph-bold ph-arrow-right"></i>
+        </li>
+        <li>
+          <a href="/donations">Find out Donations Page here</a>.<i
+            class="ph-bold ph-arrow-right"></i>
+        </li>
+        <br />
+        <li>
+          Need to Reach Us? Our contact info is at the bottom of every page!
+        </li>
+      </ul>
+    </section>
+  </main>
+</Layout>
+
+<style lang="scss">
+  main {
+    padding-block: 82px;
+    padding-inline: 36px;
+
+    p {
+      font-size: 18px;
+      color: rgba($color: #000000, $alpha: 0.6);
+    }
+  }
+
+  .title {
+    margin-bottom: 56px;
+
+    h2 {
+      font-size: 36px;
+      font-weight: 400;
+    }
+    p {
+      font-size: 18px;
+      font-weight: 400;
+      color: rgba($color: #000000, $alpha: 0.6);
+    }
+  }
+
+  .links {
+    ul {
+      list-style: none;
+      padding-inline-start: 0;
+      margin-block-start: 0;
+      margin-block-end: 0;
+      margin-inline-start: 0;
+      margin-inline-end: 0;
+
+      li {
+        margin-bottom: 24px;
+        font-size: 20px;
+
+        &:hover {
+          i {
+            transform: translateX(4px);
+            color: var(--sage-green);
+          }
+        }
+
+        a {
+          color: black;
+          text-decoration: underline;
+          font-weight: 500;
+        }
+
+        i {
+          vertical-align: middle;
+          transition: all 0.2s ease-in-out;
+          margin-left: 4px;
+        }
+      }
+    }
+  }
+</style>

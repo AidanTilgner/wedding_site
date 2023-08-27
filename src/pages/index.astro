@@ -6,6 +6,10 @@ import Layout from "../layouts/Layout.astro";
 
 <Layout title="Home">
   <main>
+    <div class="info-banner">
+      The big day is here! Click <a href="/info">here</a> for the menu, seating chart,
+      faqs, and more!
+    </div>
     <section class="hero">
       <div class="countdown">
         <h1 class="title">Countdown</h1>
@@ -18,10 +22,8 @@ import Layout from "../layouts/Layout.astro";
       </div>
       <div class="buttons">
         <div class="cta">
-          <p>Have an Invitation?</p>
-          <Button link="/invite" type="primary" client:load>
-            Your Invitation
-          </Button>
+          <p>Looking for Info?</p>
+          <Button link="/info" type="primary" client:load>Click Here</Button>
         </div>
         <div class="cta">
           <p>Got a Question?</p>
@@ -76,6 +78,30 @@ import Layout from "../layouts/Layout.astro";
 </Layout>
 
 <style lang="scss">
+  .info-banner {
+    @keyframes bannerIn {
+      0% {
+        transform: translateY(-100%);
+      }
+      100% {
+        transform: translateY(0);
+      }
+    }
+
+    background-color: var(--sand);
+    color: white;
+    padding: 1.4rem 2.4rem;
+    font-weight: 500;
+    animation-name: bannerIn;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
+
+    a {
+      color: white;
+    }
+  }
+
   section {
     padding-inline: 36px;
     padding-block: 36px;
