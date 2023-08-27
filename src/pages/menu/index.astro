@@ -6,6 +6,158 @@ import Layout from "../../layouts/Layout.astro";
   <main>
     <section class="title">
       <h2>Menu</h2>
+      <p>What we will be eating on this special day :)</p>
+    </section>
+    <section class="menu">
+      <ul class="types">
+        <li class="type" id="taco-bar">
+          <h2>Taco Bar</h2>
+          <ul class="items">
+            <li class="item">
+              <h3>Birria</h3>
+              <p>A delicious and flavorful mexican beef stew</p>
+              <p class="label">Ingredients:</p>
+              <ul class="ingredients">
+                <li>Beef</li>
+                <li>Dried Chili Peppers</li>
+                <li>Garlic</li>
+                <li>Onions</li>
+                <li>Oregano</li>
+                <li>Bay Leaves</li>
+                <li>Clavos</li>
+                <li>Pimienta Verde</li>
+                <li>Black Pepper</li>
+                <li>Salt</li>
+                <li>Ginger</li>
+                <li>Tequila</li>
+                <li>White Vinegar</li>
+                <li>Orange</li>
+                <li>Cumin</li>
+              </ul>
+            </li>
+            <li class="item">
+              <h3>Carnitas</h3>
+              <p>Mexican pork shoulder</p>
+              <p class="label">Ingredients:</p>
+              <ul class="ingredients">
+                <li>Pork Shoulder</li>
+                <li>Orange Juice</li>
+                <li>Cumin</li>
+                <li>Shallots</li>
+              </ul>
+            </li>
+            <li class="item">
+              <h3>Shredded Chicken Breast</h3>
+              <p>Just some yummy chicken</p>
+              <p class="label">Ingredients:</p>
+              <ul class="ingredients">
+                <li>Chicken Breast</li>
+                <li>Chili</li>
+                <li>Cumin</li>
+                <li>Oregano</li>
+                <li>Lime</li>
+                <li>Tomato</li>
+              </ul>
+            </li>
+            <li class="item">
+              <h3>Shredded Chicken Breast</h3>
+              <p>Just some yummy chicken</p>
+              <p class="label">Ingredients:</p>
+              <ul class="ingredients">
+                <li>Chicken Breast</li>
+                <li>Chili</li>
+                <li>Cumin</li>
+                <li>Oregano</li>
+                <li>Lime</li>
+                <li>Tomato</li>
+              </ul>
+            </li>
+            <li class="item">
+              <h3>Spanish Rice</h3>
+              <p>Flavorful sautéd rice</p>
+              <p class="label">Ingredients:</p>
+              <ul class="ingredients">
+                <li>Chicken Broth</li>
+                <li>Salt</li>
+                <li>Pepper</li>
+                <li>Tomatoes</li>
+                <li>Garlic</li>
+                <li>Onion</li>
+              </ul>
+            </li>
+            <li class="item">
+              <h3>Refried Beans</h3>
+              <p>Beans, mashed and fried</p>
+              <p class="label">Ingredients:</p>
+              <ul class="ingredients">
+                <li>Pinto Beans</li>
+                <li>Chili Powder</li>
+                <li>Onion Powder</li>
+                <li>Cumin</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li class="type toppings" id="toppings">
+          <h2>Toppings</h2>
+          <ul class="items">
+            <li>
+              <h3>Cabbage</h3>
+            </li>
+            <li><h3>Queso Fresca</h3></li>
+            <li><h3>Mexican Crema</h3></li>
+            <li><h3>Jalapeños</h3></li>
+            <li>
+              <h3>Olives</h3>
+            </li>
+            <li>
+              <h3>Onions</h3>
+            </li>
+            <li>
+              <h3>Hot Sauce Selection</h3>
+            </li>
+          </ul>
+        </li>
+        <li class="type kids" id="kids-menu">
+          <h2>Kids Menu</h2>
+          <ul class="items">
+            <li class="item">
+              <h3>Quesadillas</h3>
+              <p>Simple cheese quesadillas for the kiddos</p>
+              <p class="label">Ingredients</p>
+              <ul class="ingredients">
+                <li>Flour Tortillas</li>
+                <li>Mexican Cheese Blend</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li class="type" id="drinks">
+          <h2>Drinks</h2>
+          <ul class="items">
+            <li class="item">
+              <h3>Iced Tea</h3>
+            </li>
+            <li class="item">
+              <h3>Lemonade</h3>
+            </li>
+            <li class="item">
+              <h3>Water</h3>
+            </li>
+            <li class="item">
+              <h3>Water (w/Lemon and Lime)</h3>
+            </li>
+            <li class="item">
+              <h3>Horchata</h3>
+              <p>Mexican agua fresca</p>
+            </li>
+            <li class="item">
+              <h3>Sandia</h3>
+              <p>Mexican agua fresca</p>
+            </li>
+          </ul>
+        </li>
+      </ul>
     </section>
   </main>
 </Layout>
@@ -14,11 +166,6 @@ import Layout from "../../layouts/Layout.astro";
   main {
     padding-block: 82px;
     padding-inline: 36px;
-
-    p {
-      font-size: 18px;
-      color: rgba($color: #000000, $alpha: 0.6);
-    }
   }
   .title {
     margin-bottom: 56px;
@@ -31,6 +178,66 @@ import Layout from "../../layouts/Layout.astro";
       font-size: 18px;
       font-weight: 400;
       color: rgba($color: #000000, $alpha: 0.6);
+    }
+  }
+
+  .menu {
+    .types {
+      padding: 0;
+      list-style-type: none;
+
+      .type {
+        margin-bottom: 48px;
+
+        h2 {
+          font-size: 24px;
+          font-weight: 400;
+
+          @media screen and (min-width: 768px) {
+            font-size: 36px;
+          }
+        }
+
+        p {
+          font-size: 18px;
+          font-weight: 500;
+          color: rgba($color: #000000, $alpha: 0.6);
+        }
+
+        .label {
+          font-size: 18px;
+          font-weight: 400;
+          color: rgba($color: #000000, $alpha: 0.6);
+        }
+
+        .items {
+          padding: 0;
+          list-style-type: none;
+
+          .item {
+            margin-bottom: 36px;
+
+            .ingredients {
+              padding: 0;
+              list-style-type: none;
+
+              li {
+                margin-bottom: 8px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .toppings {
+    .items {
+      li {
+        h3 {
+          font-weight: 400;
+        }
+      }
     }
   }
 </style>
