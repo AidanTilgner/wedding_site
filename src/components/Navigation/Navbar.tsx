@@ -72,7 +72,7 @@ function Navbar({
                 <a href="/gallery">Gallery</a>
               </li>
               <li>
-                <a href="/info">Information</a>
+                <a href="/#info">Information</a>
               </li>
             </ul>
             <div className={Styles.rsvp}>
@@ -98,7 +98,7 @@ function Navbar({
             <a href="/wedding-party">Party</a>
           </li>
           <li>
-            <a href="/info">Information</a>
+            <a href="/#info">Information</a>
           </li>
         </ul>
         <div className={Styles.title}>
